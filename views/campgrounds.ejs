@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>campgounds</title>
+</head> -->
+<!-- <body> -->
+    <%layout('../layouts/boilerplate') %>
+    <div id="map" style="height: 500px; width: 100%;"></div>
+    <!-- <nav><a href="/campgrounds/new">Add New</a></nav> -->
+    <h1>list Of Campgrounds:</h1>
+    <ol>
+        <% for (const it of camps) {%>
+            <!-- <li><a href="/campgrounds/<%= it.id %>"> <%= it.title %></a></li> -->
+            <div class="card mb-3">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <% if(it.images.length){ %>
+                        <img class="img-fluid"  src="<%=it.images[0].url%>">
+                        <% }else{ %>
+                            <img class="img-fluid"  src="">
+                            <% } %>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= it.title %></h5>
+                            <h6 class="card-price"><%= it.price %></h6>
+                            <h6 class="card-location"><%= it.location %></h6>
+                            <a href="/campgrounds/<%= it.id %>" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </ol>
+    <script>
+        const mapToken = '<%-process.env.MapBOX_TOKEN%>'
+        const campground= {features:<%-JSON.stringify(camps) %>}
+    </script>
+    <script src="/clustermap.js"></script>
+    
+<!-- </body>
+</html> -->

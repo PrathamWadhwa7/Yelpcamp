@@ -1,0 +1,60 @@
+<%layout('../layouts/boilerplate') %>
+    <form action="/campgrounds" method="post"  class="validate-form" novalidate enctype="multipart/form-data"> 
+        <!-- <h1>Adding new Campground!</h1>
+        <div>
+        <label for="t">Enter Title</label>
+        <input type="text" name="campgrounds[title]" id="t">
+        </div>
+        <div>
+            <label for="l">Enter Locations</label>
+            <input type="text" name="campgrounds[location]" id="l">
+        </div>
+        <button>Create</button> -->
+        <div class="row" >
+            <h1 class="text-center">New Campground</h1>
+            <div class="col-md-6 offset-md-3">
+               
+        <div class="mb-3">
+        <label class="form-label" for="t">Enter Title:</label>
+        <input class="form-control" type="text" name="campgrounds[title]" id="t" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"  for="l">Enter Location:</label>
+            <input class="form-control" type="text" name="campgrounds[location]" id="l" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="p">Price:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input type="text" class="form-control" name="campgrounds[price]" id="p" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>  
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload Images :</label>
+            <input class="form-control" name="image" type="file" id="formFile" multiple>
+          </div>
+        <!-- <input type="file" name="image" multiple> -->
+        <!-- <div class="mb-3">
+            <label class="form-label" for="im">Image URL:</label>
+            <input type="text" name="campgrounds[image]" id="im" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div> -->
+        <button class="btn btn-success">Create</button>
+            </div>
+        </div>
+    </form>
+    <a  href="/campgrounds">back</a>
+
+  
+    
